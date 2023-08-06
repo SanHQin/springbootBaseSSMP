@@ -1,0 +1,19 @@
+#测试环境
+server:
+  port: 2004
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssmp_learn?serverTimezone=UTC
+    username: root
+    password: 222333888
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: ssmp_
+      id-type: input
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
