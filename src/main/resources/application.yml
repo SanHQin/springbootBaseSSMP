@@ -1,8 +1,12 @@
 #应用环境
 spring:
   profiles:
-    active: pro
+    active: dev
     group:
       "dev":
       "pro":
       "test":
+#设置日志模板格式
+logging:
+  pattern:
+    console: "%d %clr(%5p) --- [%16t] %clr(%-40.40c){cyan} : %m %n"
