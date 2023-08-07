@@ -4,11 +4,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.itgt.controller.utils.R;
 import com.itgt.domain.Student;
 import com.itgt.service.IStudentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/students")
@@ -52,6 +54,7 @@ public class StudentController {
     //通过分页获取数据
     @GetMapping("/{currentPage}/{pageSize}")
     public R getStudentByIPage(@PathVariable int currentPage, @PathVariable int pageSize,Student student){
+        log.info(student.toString());
         System.out.println(student);
         IPage<Student> page = iStudentService.getStudentPageBySearch(currentPage,pageSize,student);
         if(currentPage>page.getPages()){
