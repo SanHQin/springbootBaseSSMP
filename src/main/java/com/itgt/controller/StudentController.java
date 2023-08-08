@@ -48,13 +48,15 @@ public class StudentController {
     //通过id查询单个学生
     @GetMapping("{sid}")
     public R getStudent(@PathVariable String sid){
+        System.out.println("查询学生");
+        System.out.println("查询学生");
+        System.out.println("查询学生");
         return new R(true,iStudentService.getById(sid));
     }
 
     //通过分页获取数据
     @GetMapping("/{currentPage}/{pageSize}")
     public R getStudentByIPage(@PathVariable int currentPage, @PathVariable int pageSize,Student student){
-        log.info(student.toString());
         System.out.println(student);
         IPage<Student> page = iStudentService.getStudentPageBySearch(currentPage,pageSize,student);
         if(currentPage>page.getPages()){

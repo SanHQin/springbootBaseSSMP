@@ -53,6 +53,12 @@
             <version>1.2.18</version>
         </dependency>
 
+<!--        开启开发者工具===》使用（Ctrl+F9）构建项目操作启动热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
 
     </dependencies>
 
